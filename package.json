@@ -1,0 +1,25 @@
+{
+  "name": "odin_hash_maps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hash_map.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RubyFalcon/odin_hash_maps.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RubyFalcon/odin_hash_maps/issues"
+  },
+  "homepage": "https://github.com/RubyFalcon/odin_hash_maps#readme",
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "babel-jest": "^30.3.0",
+    "jest": "^30.3.0"
+  }
+}
