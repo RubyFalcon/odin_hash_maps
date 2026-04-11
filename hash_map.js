@@ -38,6 +38,18 @@ class HashMap {
     return null
     
   }
+
+  has(key) {
+    const index = this._hash(key)
+      if (index < 0 || index >= this.buckets.length) {
+      throw new Error("Trying to access index out of bounds");
+    }
+
+    const bucket =this.buckets[index]
+    const existingEntry = bucket.find(entry => entry[0] === key);
+    
+    return !!existingEntry //returns true/false depending if existing entry is truthy
+  }
  
   _hash(key) {
     let hashCode = 0;
