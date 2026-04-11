@@ -50,6 +50,19 @@ class HashMap {
     
     return !!existingEntry //returns true/false depending if existing entry is truthy
   }
+
+  remove(key) {
+    const index = this._hash(key)
+          if (index < 0 || index >= this.buckets.length) {
+      throw new Error("Trying to access index out of bounds");
+    }
+
+    const bucket = this.buckets[index]
+    const foundIndex = bucket.findIndex(entry=> entry[0] === key)
+    if (foundIndex === -1) return false
+    bucket.splice(foundIndex,1)
+    return true
+  }
  
   _hash(key) {
     let hashCode = 0;
