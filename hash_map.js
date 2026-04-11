@@ -24,7 +24,20 @@ class HashMap {
     }
   }
 
+  get(key) {
+    const index = this._hash(key);
+     if (index < 0 || index >= this.buckets.length) {
+      throw new Error("Trying to access index out of bounds");
+    }
 
+    const bucket = this.buckets[index];
+    const existingEntry = bucket.find(entry => entry[0] === key);
+    if (existingEntry) {
+        return existingEntry[1]
+    }
+    return null
+    
+  }
  
   _hash(key) {
     let hashCode = 0;
