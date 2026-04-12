@@ -84,7 +84,7 @@ class HashMap {
   clear() {
     this.buckets = Array.from({ length: this.capacity }, () => []);
   }
-  
+
   _resize() {
     let prevBuckets = this.entries();
     this.capacity *= 2;
@@ -105,3 +105,5 @@ class HashMap {
     return this.buckets.flatMap((bucket) => bucket);
   }
 }
+
+export default HashMap;
