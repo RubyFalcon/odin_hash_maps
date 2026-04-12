@@ -63,6 +63,13 @@ class HashMap {
     bucket.splice(foundIndex,1)
     return true
   }
+
+  length() {
+
+    return this.buckets.reduce((count, bucket)=> {
+        return count + bucket.length
+    },0)
+  }
  
   _hash(key) {
     let hashCode = 0;
