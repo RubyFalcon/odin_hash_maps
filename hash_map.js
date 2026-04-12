@@ -81,6 +81,17 @@ class HashMap {
     return this._getAllEntries().map((entry) => entry[1]);
   }
 
+  clear() {
+    this.buckets = Array.from({ length: this.capacity }, () => []);
+  }
+  
+  _resize() {
+    let prevBuckets = this.entries();
+    this.capacity *= 2;
+    this.clear()
+    prevBuckets.forEach(entry=> this.set(...entry))
+  }
+
   _hash(key) {
     let hashCode = 0;
     const primeNumber = 31;
